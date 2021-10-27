@@ -63,8 +63,8 @@ protected:
         serialize_buffer_deserialize(buffer, person->name, sizeof(char) * NAME_LENGTH);
         serialize_buffer_deserialize(buffer, (char *) &person->age, sizeof(int));
 
-		Occupation *occupation = (Occupation *)malloc(sizeof(Occupation));
-		person->occupation = occupation;
+        Occupation *occupation = (Occupation *)malloc(sizeof(Occupation));
+        person->occupation = occupation;
 
         deserializedOccupation(person->occupation, buffer);
         serialize_buffer_deserialize(buffer, (char *) &person->weight, sizeof(int));
@@ -75,21 +75,21 @@ protected:
 TEST_F(PointerStructureTest, SerializedPerson)
 {
     Person personSrc, personDest;
-	Occupation occupation;
+    Occupation occupation;
     SerializeBuffer *buffer;
 
     memset(&personSrc, 0, sizeof(personSrc));
     memset(&personDest, 0, sizeof(personDest));
-	memset(&occupation, 0, sizeof(occupation));
+    memset(&occupation, 0, sizeof(occupation));
 
     serialize_buffer_init(&buffer);
 
-	strcpy(occupation.dept_name, "Finance");
-	occupation.employee_code = 54;
+    strcpy(occupation.dept_name, "Finance");
+    occupation.employee_code = 54;
 
     strcpy(personSrc.name, "David Andrew");
     personSrc.age = 30;
-	personSrc.occupation = &occupation;
+    personSrc.occupation = &occupation;
     personSrc.weight = 65;
 
     serializedPerson(&personSrc, buffer);

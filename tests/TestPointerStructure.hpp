@@ -98,7 +98,7 @@ TEST_F(PointerStructureTest, SerializedPerson)
 
     ASSERT_EQ(strcmp(personDest.name, personSrc.name), 0);
     ASSERT_EQ(personDest.age, 30);
-    ASSERT_EQ(strcmp(personDest.occupation->dept_name, "Finance"), 0);
+    ASSERT_EQ(strcmp(personDest.occupation->dept_name, personSrc.occupation->dept_name), 0);
     ASSERT_EQ(personDest.occupation->employee_code, 54);
     ASSERT_EQ(personDest.weight, 65);
 }

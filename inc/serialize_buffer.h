@@ -19,7 +19,7 @@ typedef struct serialize_buffer {
 void serialize_buffer_init(SerializeBuffer **buffer);
 void serialize_buffer_serialize(SerializeBuffer *buffer, char *data, int nbytes);
 void serialize_buffer_deserialize(SerializeBuffer *buffer, char *dest, int size);
-void serialize_buffer_reset(SerializeBuffer *buffer);
+void serialize_buffer_seek_to_zero(SerializeBuffer *buffer);
 void serialize_buffer_skip(SerializeBuffer *buffer, int skip_size);
 void serialize_buffer_free(SerializeBuffer *buffer);
 

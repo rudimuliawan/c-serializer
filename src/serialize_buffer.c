@@ -60,9 +60,9 @@ void serialize_buffer_skip(SerializeBuffer *buffer, int skip_size)
 }
 
 
-void serialize_buffer_reset(SerializeBuffer *buffer)
+void serialize_buffer_seek_to_zero(SerializeBuffer *buffer)
 {
-	buffer->next = 0;
+    buffer->next = 0;
 }
 
 void serialize_buffer_free(SerializeBuffer *buffer)
